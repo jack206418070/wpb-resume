@@ -210,6 +210,9 @@ img{
 .footer{
     background-color: #003D79;
     padding: 30px;
+    @include mobile{
+        padding: 20px 0;
+    }
     p{
         text-align: center;
     }

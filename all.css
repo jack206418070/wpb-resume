@@ -285,6 +285,12 @@ img {
   padding: 30px;
 }
 
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 0;
+  }
+}
+
 .footer p {
   text-align: center;
 }
