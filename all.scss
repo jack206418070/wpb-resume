@@ -121,7 +121,7 @@ img{
             padding: 8px 12px;
             display: block;
             @include mobile{
-                font-size: 20px;
+                font-size: 5vw;
             }
             &:hover{
                 color: yellow;
