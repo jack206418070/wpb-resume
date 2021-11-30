@@ -101,6 +101,9 @@ img{
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: #003D79;
+    position: fixed;
+    width: 100%;
+    top: 0;
     @include mobile{
         padding-bottom: 10px;
     }
@@ -131,6 +134,7 @@ img{
 }
 
 .banner{
+    margin-top: 40px;
     background-image: url(https://training.pada-x.com/images/welcome0.jpg);
     background-size:cover;
     background-position: center center;
