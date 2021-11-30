@@ -164,7 +164,7 @@ img {
 }
 
 .banner {
-  margin-top: 40px;
+  margin-top: 94px;
   background-image: url(https://training.pada-x.com/images/welcome0.jpg);
   background-size: cover;
   background-position: center center;
@@ -174,12 +174,23 @@ img {
 @media (max-width: 768px) {
   .banner {
     height: 300px;
+    margin-top: 118px;
   }
 }
 
 .resume {
   padding-top: 30px;
   padding-bottom: 30px;
+}
+
+.resume:target {
+  padding-top: 94px;
+}
+
+@media (max-width: 768px) {
+  .resume:target {
+    padding-top: 140px;
+  }
 }
 
 .resume h2 {
@@ -246,6 +257,16 @@ img {
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: lightgray;
+}
+
+.question:target {
+  padding-top: 94px;
+}
+
+@media (max-width: 768px) {
+  .question:target {
+    padding-top: 140px;
+  }
 }
 
 .question h2 {
