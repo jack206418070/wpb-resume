@@ -7,7 +7,17 @@
     box-sizing: border-box;
     font-family:  "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
 }
+@mixin pad{
+    @media (max-width: 996px) {
+        @content
+    }
+}
 
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content
+    }
+}
 
 img{
     max-width: 100%;
@@ -23,6 +33,16 @@ img{
     flex-wrap: wrap;
 }
 
+.flex-md-wrap{
+    @include mobile{
+        flex-wrap: wrap;
+    }
+}
+.flex-md-col-reverse{
+    @include mobile{
+        flex-direction: column-reverse;
+    }
+}
 .jy-content{
     &-center{
         justify-content: center;
@@ -32,6 +52,11 @@ img{
     }
     &-around{
         justify-content: space-around;
+    }
+    &-md-center{
+        @include mobile{
+            justify-content: center;
+        }
     }
 }
 
@@ -51,6 +76,9 @@ img{
     &-sm{
         font-size: 18px;
         font-weight: bold;
+        @include mobile{
+            font-size: 16px;
+        }
     }
     &-lg{
         font-size: 24px;
@@ -63,19 +91,38 @@ img{
     margin: 0 auto;
     padding-right: 144px;
     padding-left: 144px;
+    @include mobile{
+        padding-right: 40px;
+        padding-left: 40px;
+    }
 }
 
 .header{
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: #003D79;
+    @include mobile{
+        padding-bottom: 10px;
+    }
     h1{
         font-size: 36px;
+        @include mobile{
+            flex: 0 0 100%;
+            text-align: center;
+        }
     }
     &__menu{
+        @include mobile{
+            flex: 0 0 100%;
+            justify-content: space-between;
+        }
         a{
             color:white;
             padding: 8px 12px;
+            display: block;
+            @include mobile{
+                font-size: 20px;
+            }
             &:hover{
                 color: yellow;
             }
@@ -88,6 +135,9 @@ img{
     background-size:cover;
     background-position: center center;
     height: 480px;
+    @include mobile{
+        height: 300px;
+    }
 }
 
 .resume{
@@ -97,9 +147,16 @@ img{
         text-align: center;
         margin-bottom: 8px;
         flex: 0 0 100%;
+        @include mobile{
+            order: 1;
+        }
     }
     &__text{
         flex: 0 0 70%;
+        @include mobile{
+            flex: 0 0 100%;
+            order: 3;
+        }
         p{
             padding: 0 15px;
         }
@@ -108,7 +165,14 @@ img{
         flex: 0 0 30%;
         background-image: url(./image/S__1966125.jpg);
         background-size: cover;
-        height: 300px;       
+        height: 300px; 
+        @include mobile{
+            flex: 0 0 50%;
+            order: 2;
+            height: 200px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+        }      
     }
 }
 .question{
@@ -121,12 +185,20 @@ img{
     }
     &__part{
         padding: 15px;
+        @include mobile{
+            padding: 0;
+            margin-bottom: 20px;
+        }
         h3{
             margin-bottom: 12px;
             color: #003D79;
         }
         p{
             padding: 0 36px;
+            @include mobile{
+                padding-left: 20px;
+                padding-right: 0;
+            }
         }
     }
 }
